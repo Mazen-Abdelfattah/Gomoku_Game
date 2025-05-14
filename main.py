@@ -44,10 +44,11 @@ def human_vs_ai_game(board_size=15, ai_algorithm="alphabeta", ai_depth=3):
             start_time = time.time()
             row, col = current_player.get_move(board)
             end_time = time.time()
-            print(f"AI placed at ({row}, {col}) in {end_time - start_time:.2f} seconds")
+            print(f"AI placed at ({row + 1}, {col + 1}) in {end_time - start_time:.2f} seconds")
         
         # Make the move
         board.place_piece(row, col, current_player.symbol)
+        display_board(board)  # Show the board after each move
         
         # Check for win
         if check_win(board, row, col):
@@ -111,6 +112,7 @@ def ai_vs_ai_game(board_size=15, ai1_depth=3, ai2_depth=3, max_moves=None):
         
         # Make the move
         board.place_piece(row, col, current_player.symbol)
+        display_board(board)  # Show the board after each move
         move_count += 1
         
         # Check for win
