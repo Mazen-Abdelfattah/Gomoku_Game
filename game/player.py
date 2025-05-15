@@ -82,7 +82,8 @@ class AIPlayer(Player):
         
         # Run the search algorithm
         if self.algorithm.__name__ == 'minimax':
-            _, move = self.algorithm(board, self.depth, self.symbol == 1, self.eval_fn, self.symbol)
+            _, move = self.algorithm(board, self.depth, float('-inf'), float('inf'), self.symbol == 1, self.eval_fn,
+                                     self.symbol)
         else:  # alpha-beta
             _, move = self.algorithm(board, self.depth, float('-inf'), float('inf'), 
                                     self.symbol == 1, self.eval_fn, self.symbol)
