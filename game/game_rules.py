@@ -1,15 +1,4 @@
 def check_win(board, row, col):
-    """
-    Check if the most recent move at (row, col) has created a winning position
-    
-    Args:
-        board: The game board
-        row: Row of the last move
-        col: Column of the last move
-        
-    Returns:
-        bool: True if the move resulted in a win, False otherwise
-    """
     player = board.get_cell(row, col)
     if player == 0:
         return False
@@ -24,7 +13,7 @@ def check_win(board, row, col):
     
     # Check each direction
     for direction_pair in directions:
-        count = 1  # Count the piece at (row, col)
+        count = 1 
         
         # Check in both directions of the pair
         for dx, dy in direction_pair:
@@ -45,15 +34,6 @@ def check_win(board, row, col):
     return False
 
 def is_board_full(board):
-    """
-    Check if the board is full (draw condition)
-    
-    Args:
-        board: The game board
-        
-    Returns:
-        bool: True if the board is full, False otherwise
-    """
     return board.is_full()
 
 def get_game_state(board):
@@ -72,11 +52,9 @@ def get_game_state(board):
         if check_win(board, row, col):
             return 'player1_win' if player == 1 else 'player2_win'
     
-    # Check for draw
     if is_board_full(board):
         return 'draw'
     
-    # Game is still in progress
     return 'in_progress'
 
 

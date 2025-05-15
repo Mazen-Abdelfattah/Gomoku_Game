@@ -1,11 +1,6 @@
 def order_moves(board, moves, player):
     """
     Order moves for better alpha-beta pruning efficiency.
-    
-    Args:
-        board: The current board state
-        moves: List of (row, col) tuples representing candidate moves
-        player: The player making the move
         
     Returns:
         list: Ordered list of (row, col) tuples

@@ -1,5 +1,3 @@
-# main.py - Entry point for the Gomoku game
-
 import time
 from game.board import Board
 from game.game_rules import check_win, is_board_full
@@ -10,14 +8,6 @@ from ai.evaluation import evaluate_board
 from ui.console_ui import display_board, get_human_move
 
 def human_vs_ai_game(board_size=15, ai_algorithm="alphabeta", ai_depth=3):
-    """
-    Run a Human vs AI game
-    
-    Args:
-        board_size: Size of the board (default: 15x15)
-        ai_algorithm: AI algorithm to use ("minimax" or "alphabeta")
-        ai_depth: Maximum search depth for the AI
-    """
     # Initialize board
     board = Board(size=board_size)
     
@@ -31,7 +21,7 @@ def human_vs_ai_game(board_size=15, ai_algorithm="alphabeta", ai_depth=3):
         ai_player = AIPlayer(-1, algorithm=alpha_beta, depth=ai_depth)
     
     # Main game loop
-    current_player = human_player  # Human goes first
+    current_player = human_player  
     
     while True:
         
@@ -66,15 +56,6 @@ def human_vs_ai_game(board_size=15, ai_algorithm="alphabeta", ai_depth=3):
 
 
 def ai_vs_ai_game(board_size=15, ai1_depth=3, ai2_depth=3, max_moves=None):
-    """
-    Run an AI vs AI game (Minimax vs Alpha-Beta)
-    
-    Args:
-        board_size: Size of the board (default: 15x15)
-        ai1_depth: Maximum search depth for Minimax
-        ai2_depth: Maximum search depth for Alpha-Beta
-        max_moves: Maximum number of moves (to prevent endless games)
-    """
     # Initialize board
     board = Board(size=board_size)
     

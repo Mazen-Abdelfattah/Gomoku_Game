@@ -1,9 +1,4 @@
 def display_board(board):
-    """
-    Display the Gomoku board in the console.
-    Args:
-        board (Board): Board object.
-    """
     size = board.size
     print("   " + " ".join(f"{i+1:2}" for i in range(size)))
     for idx in range(size):
@@ -19,13 +14,6 @@ def display_board(board):
         print(row_str)
 
 def get_human_move(board):
-    """
-    Prompt the human player to enter a move.
-    Args:
-        board (Board): Board object.
-    Returns:
-        tuple: (row, col) as zero-based indices.
-    """
     size = board.size
     while True:
         try:
